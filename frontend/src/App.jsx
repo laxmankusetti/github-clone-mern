@@ -22,8 +22,8 @@ const App = () => {
 					<Route path='/' element={<HomePage />} />
 					<Route path='/login' element={!authUser ? <LoginPage /> : <Navigate to={'/'} />} />
 					<Route path='/signup' element={!authUser ? <SignUpPage /> : <Navigate to={'/'} />} />
-					<Route path='/explore' element={authUser ? <ExplorePage /> : <LoginPage />} />
-					<Route path='/likes' element={authUser ?  <LikesPage /> : <LoginPage />} />
+					<Route path='/explore' element={authUser ? <ExplorePage /> : <Navigate to={'/login'} />} />
+					<Route path='/likes' element={authUser ?  <LikesPage /> : <Navigate to={'/login'} />} />
 				</Routes>
 				<Toaster />
 			</div>
